@@ -51,13 +51,13 @@ ENCRYPT_DRIVE='TRUE'
 DRIVE_PASSPHRASE=''
 
 # Root password (leave blank to be prompted).
-ROOT_PASSWORD=''
+ROOT_PASSWORD='a'
 
 # Main user to create (by default, added to wheel group, and others).
 USER_NAME='matezz'
 
 # The main user's password (leave blank to be prompted).
-USER_PASSWORD=''
+USER_PASSWORD='a'
 
 # System timezone.
 TIMEZONE='Europe/Bratislava'
@@ -301,7 +301,7 @@ install_packages() {
     local packages=''
 
     # General utilities/libraries
-    packages+=' alsa-utils chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute rxvt-unicode evolution neomutt dmenu i3-gaps mate mate-extra ffmpeg python-pywal firefox'
+    packages+=' alsa-utils chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute rxvt-unicode evolution neomutt dmenu i3-gaps ffmpeg python-pywal firefox'
 
     # Development packages
     packages+=' git'
@@ -309,14 +309,14 @@ install_packages() {
     # Netcfg
     if [ -n "$WIRELESS_DEVICE" ]
     then
-        packages+=' netcfg ifplugd dialog wireless_tools wpa_actiond wpa_supplicant'
+        packages+=' ifplugd dialog wireless_tools wpa_actiond wpa_supplicant'
     fi
 
     # Java stuff
     #packages+=' icedtea-web-java7 jdk7-openjdk jre7-openjdk'
 
     # Libreoffice
-    packages+=' libreoffice-calc libreoffice-en-US libreoffice-gnome libreoffice-impress libreoffice-writer hunspell-en hyphen-en mythes-en'
+    #packages+=' libreoffice-calc libreoffice-en-US libreoffice-gnome libreoffice-impress libreoffice-writer hunspell-en hyphen-en mythes-en'
 
     # Misc programs
     packages+=' mpv youtube-dl mplayer pidgin vlc xscreensaver gparted dosfstools ntfsprogs'
