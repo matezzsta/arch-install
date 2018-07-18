@@ -144,11 +144,11 @@ configure() {
     echo 'Installing additional packages'
     install_packages
 
-    echo 'Installing packer'
-    install_packer
+#    echo 'Installing packer'
+#    install_packer
 
-    echo 'Installing AUR packages'
-    install_aur_packages
+#    echo 'Installing AUR packages'
+#    install_aur_packages
 
     echo 'Clearing package tarballs'
     clean_packages
@@ -301,7 +301,10 @@ install_packages() {
     local packages=''
 
     # General utilities/libraries
-    packages+=' alsa-utils chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute rxvt-unicode evolution neomutt dmenu i3-gaps ffmpeg python-pywal firefox'
+    packages+=' alsa-utils chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute ffmpeg rxvt-unicode evolution firefox'
+
+    # i3-gaps
+    packages+=' i3-gaps i3status i3blocks i3lock ranger neomutt dmenu python-pywal '
 
     # Development packages
     packages+=' git'
@@ -356,26 +359,26 @@ install_packages() {
     pacman -Sy --noconfirm $packages
 }
 
-install_packer() {
-    mkdir /foo
-    cd /foo
-    curl https://aur.archlinux.org/packages/pa/packer/packer.tar.gz | tar xzf -
-    cd packer
-    makepkg -si --noconfirm --asroot
+#install_packer() {
+#    mkdir /foo
+#    cd /foo
+#    curl https://aur.archlinux.org/cgit/aur.git/snapshot/packer.tar.gz | tar xzf -
+#    cd packer
+#    makepkg -si --noconfirm --asroot
+#
+#    cd /
+#    rm -rf /foo
+#}
 
-    cd /
-    rm -rf /foo
-}
-
-install_aur_packages() {
-    mkdir /foo
-    export TMPDIR=/foo
-    packer -S --noconfirm android-udev
-    packer -S --noconfirm chromium-pepper-flash-stable
-    packer -S --noconfirm chromium-libpdf-stable
-    unset TMPDIR
-    rm -rf /foo
-}
+#install_aur_packages() {
+#    mkdir /foo
+#    export TMPDIR=/foo
+#    packer -S --noconfirm android-udev
+#    packer -S --noconfirm chromium-pepper-flash-stable
+#    packer -S --noconfirm chromium-libpdf-stable
+#    unset TMPDIR
+#    rm -rf /foo
+#}
 
 clean_packages() {
     yes | pacman -Scc
