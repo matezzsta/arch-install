@@ -79,8 +79,8 @@ KEYMAP='us'
 # For generic stuff
 VIDEO_DRIVER="vesa"
 
-# Wireless device, leave blank to not use wireless and use DHCP instead.
-WIRELESS_DEVICE="wlan0"
+# Wireless device, leave blank to not use wireless and use DHCP instead. //wlan0
+WIRELESS_DEVICE=""
 # For tc4200's
 #WIRELESS_DEVICE="eth1"
 
@@ -301,7 +301,7 @@ install_packages() {
     local packages=''
 
     # General utilities/libraries
-    packages+=' alsa-utils cpupower chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute ffmpeg rxvt-unicode evolution firefox pkgfile'
+    packages+=' netctl alsa-utils cpupower chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute ffmpeg rxvt-unicode evolution firefox pkgfile'
 
     # i3-gaps
     packages+=' i3-gaps i3status i3blocks i3lock ranger neomutt dmenu python-pywal '
@@ -888,7 +888,7 @@ create_user() {
     local name="$1"; shift
     local password="$1"; shift
 
-    useradd -m -s /bin/zsh -G adm,systemd-journal,wheel,rfkill,games,network,video,audio,optical,floppy,storage,scanner,power,adbusers,wireshark "$name"
+    useradd -m -s /bin/zsh -G adm,systemd-journal,wheel,rfkill,games,network,video,audio,optical,floppy,storage,scanner,power "$name"
     echo -en "$password\n$password" | passwd "$name"
 }
 
