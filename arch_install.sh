@@ -301,7 +301,7 @@ install_packages() {
     local packages=''
 
     # General utilities/libraries
-    packages+=' alsa-utils chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute ffmpeg rxvt-unicode evolution firefox pkgfile'
+    packages+=' alsa-utils cpupower chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute ffmpeg rxvt-unicode evolution firefox pkgfile'
 
     # i3-gaps
     packages+=' i3-gaps i3status i3blocks i3lock ranger neomutt dmenu python-pywal '
