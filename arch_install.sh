@@ -301,7 +301,7 @@ install_packages() {
     local packages=''
 
     # General utilities/libraries
-    packages+=' alsa-utils chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute'
+    packages+=' alsa-utils chromium net-tools ntp openssh python python2 rsync sudo wget zip zsh traceroute rxvt-unicode evolution neomutt dmenu i3-gaps mate mate-extra ffmpeg python-pywal firefox'
 
     # Development packages
     packages+=' git'
@@ -313,13 +313,13 @@ install_packages() {
     fi
 
     # Java stuff
-    packages+=' icedtea-web-java7 jdk7-openjdk jre7-openjdk'
+    #packages+=' icedtea-web-java7 jdk7-openjdk jre7-openjdk'
 
     # Libreoffice
     packages+=' libreoffice-calc libreoffice-en-US libreoffice-gnome libreoffice-impress libreoffice-writer hunspell-en hyphen-en mythes-en'
 
     # Misc programs
-    packages+=' mplayer pidgin vlc xscreensaver gparted dosfstools ntfsprogs'
+    packages+=' mpv youtube-dl mplayer pidgin vlc xscreensaver gparted dosfstools ntfsprogs'
 
     # Xserver
     packages+=' xorg-apps xorg-server xorg-xinit xterm'
@@ -331,7 +331,7 @@ install_packages() {
     packages+=' ttf-dejavu ttf-liberation'
 
     # On Intel processors
-    packages+=' intel-ucode'
+    #packages+=' intel-ucode'
 
     # For laptops
     packages+=' xf86-input-synaptics'
